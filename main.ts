@@ -3,8 +3,10 @@ namespace Math {
     export function List2text(listval:number[]|string[],onechar:string=",") {
         let curstr = ""
         for (let _i = 0; _i < listval.length; _i++) {
-            if (typeof listval[_i] == "number" || typeof listval[_i] == "string") {
-                curstr = "" + curstr + listval[_i]
+            if (typeof listval[_i] === 'string') {
+                curstr = "" + curstr + listval[_i] as string
+            } else if (typeof listval[_i] === 'number') {
+                curstr = "" + curstr + (listval[_i] as number).toString()
             } else {
                 curstr = "" + curstr + "*any"
             }
