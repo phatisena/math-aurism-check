@@ -9,6 +9,13 @@ namespace math {
         return true
     }
 
+    //%blockid=math_aurismcheck_checknum
+    //%block="Get aurism sum number $numstring mod $remnum with invert $invert and reverse $reverse||and debug mode $debug"
+    //%numstring.defl="12345678901357902468"
+    //%remnum.defl=10
+    //%group="aurism check"
+    //%weight=10
+    //%inlineInputMode=inline
     export function AurismCheck(numstring:string="",remnum:number=0,invert:boolean=false,reverse:boolean=false,debug:boolean=false) {
         if (!(CheckNumStr(numstring))) { return -1 }
         let numlist: number[] = []
@@ -60,6 +67,13 @@ namespace math {
         return true
     }
 
+    //%blockid=math_aurismcheck_checkstring
+    //%block="Get aurism sum sumstring $codestring in store charcter $storechar with invert $invert and reverse $reverse||and debug mode $debug"
+    //%codestring.defl="makecodearcade"
+    //%storechar.defl="0123456789abcdefghijklmnopqrstuvwxyz"
+    //%group="aurism check"
+    //%weight=5
+    //%inlineInputMode=inline
     export function AurismCheckChar(codestring:string="",storechar:string="",invert:boolean=false,reverse:boolean=false,debug:boolean=false) {
         if (!(CheckCharStr(storechar,codestring))) { return "" }
         let numlist: number[] = []
