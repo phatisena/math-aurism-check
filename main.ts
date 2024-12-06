@@ -9,7 +9,7 @@ namespace math {
         return true
     }
 
-    export function AurismCheck(numstring:string="",remnum:number=0,invert:boolean=false,reverse:boolean=false) {
+    export function AurismCheck(numstring:string="",remnum:number=0,invert:boolean=false,reverse:boolean=false,debug:boolean=false) {
         if (!(CheckNumStr(numstring))) { return -1 }
         let numlist: number[] = []
         for (let _i = 0; _i < numstring.length; _i++) {
@@ -38,6 +38,16 @@ namespace math {
             curv += numv
         }
         if (remnum > 0) { curv = curv % remnum}
+        if (debug) {
+            console.log("AurismDebugCheck")
+            console.log("----------------")
+            console.log("numberlist: " + numlist)
+            console.log("generatesum: " + numsum)
+            console.log("numwithsum: " + numcheck)
+            console.log("modulus: " + remnum)
+            console.log("result: " + curv)
+            console.log("----------------")
+        }
         return curv
     }
 
@@ -50,7 +60,7 @@ namespace math {
         return true
     }
 
-    export function AurismCheckChar(codestring:string="",storechar:string="",invert:boolean=false,reverse:boolean=false) {
+    export function AurismCheckChar(codestring:string="",storechar:string="",invert:boolean=false,reverse:boolean=false,debug:boolean=false) {
         if (!(CheckCharStr(storechar,codestring))) { return "" }
         let numlist: number[] = []
         for (let _i = 0; _i < codestring.length; _i++) {
@@ -79,6 +89,16 @@ namespace math {
             curv += numv
         }
         curv = curv % storechar.length
+        if (debug) {
+            console.log("AurismDebugCheck")
+            console.log("----------------")
+            console.log("numberlist: " + numlist)
+            console.log("generatesum: " + numsum)
+            console.log("numwithsum: " + numcheck)
+            console.log("modulus: " + storechar.length)
+            console.log("result: " + curv)
+            console.log("----------------")
+        }
         return storechar.charAt(curv)
     }
 }
