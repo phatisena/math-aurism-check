@@ -1,20 +1,15 @@
 namespace Math {
     
-    export function List2text(listval:number[]|string[],onechar:string=",") {
-        let curstr = ""
-        for (let _i = 0; _i < listval.length; _i++) {
-            if (typeof listval[_i] === 'string') {
-                curstr = "" + curstr + listval[_i] as string
-            } else if (typeof listval[_i] === 'number') {
-                curstr = "" + curstr + (listval[_i] as number).toString()
+    export function List2text(listval:(number|string)[],onechar:string=",") {
+        return listval.map(item => {
+            if (typeof item === 'string') {
+                return item
+            } else if (typeof item === 'number') {
+                return item.toString()
             } else {
-                curstr = "" + curstr + "*any"
+                return "any!"
             }
-            if (_i < listval.length - 1) {
-                curstr = "" + curstr + onechar
-            }
-        }
-        return curstr
+        }).join(onechar)
     }
 
     export function CheckNumStr(numstri:string="") {
