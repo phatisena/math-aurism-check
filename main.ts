@@ -58,14 +58,15 @@ namespace Math {
         }
         if (remnum > 0) { curv = curv % remnum}
         if (debug) {
-            console.log("AurismDebugCheck")
-            console.log("----------------")
+            console.log("Aurism-NumberCheck-Debug")
+            console.log("------------------------")
+            console.log("input: " + numstring)
             console.log("numberlist: " + List2text(numlist,","))
             console.log("generatesum: " + List2text(numsum,","))
             console.log("numwithsum: " + List2text(numcheck,","))
             console.log("modulus: " + remnum)
             console.log("result: " + curv)
-            console.log("----------------")
+            console.log("------------------------")
         }
         return curv
     }
@@ -116,14 +117,16 @@ namespace Math {
         }
         curv = curv % storechar.length
         if (debug) {
-            console.log("AurismDebugCheck")
-            console.log("----------------")
+            console.log("Aurism-StringCheck-Debug")
+            console.log("------------------------")
+            console.log("input: " + codestring)
             console.log("numberlist: " + List2text(numlist,","))
             console.log("generatesum: " + List2text(numsum,","))
             console.log("numwithsum: " + List2text(numcheck,","))
             console.log("modulus: " + storechar.length)
             console.log("result: " + curv)
-            console.log("----------------")
+            console.log("charresult: " + storechar.charAt(curv))
+            console.log("------------------------")
         }
         return storechar.charAt(curv)
     }
