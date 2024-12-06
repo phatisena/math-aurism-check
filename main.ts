@@ -22,7 +22,7 @@ namespace Math {
     }
 
     //%blockid=math_aurismcheck_checknum
-    //%block="Get aurism sum number $numstring mod $remnum with invert $invert and reverse $reverse||and debug mode $debug"
+    //%block="Get aurism sum as number $numstring mod $remnum with invert $invert and reverse $reverse||and debug mode $debug"
     //%numstring.defl="12345678901357902468"
     //%remnum.defl=10
     //%group="aurism check"
@@ -81,7 +81,7 @@ namespace Math {
     }
 
     //%blockid=math_aurismcheck_checkstring
-    //%block="Get aurism sum sumstring $codestring in store charcter $storechar with invert $invert and reverse $reverse||and debug mode $debug"
+    //%block="Get aurism sum as string $codestring in store charcter $storechar with invert $invert and reverse $reverse||and debug mode $debug"
     //%codestring.defl="makecodearcade"
     //%storechar.defl="0123456789abcdefghijklmnopqrstuvwxyz"
     //%group="aurism check"
