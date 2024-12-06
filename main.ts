@@ -40,4 +40,35 @@ namespace math {
         if (remnum > 0) { curv = curv % remnum}
         return curv
     }
+
+    export function AurismCharCheck(storechar:string="",codestring:string="",remnum:number=0,invert:boolean=false,reverse:boolean=false) {
+        let numlist: number[] = []
+        for (let _i = 0; _i < codestring.length; _i++) {
+            numlist.push(storechar.indexOf(codestring.charAt(_i)))
+        }
+        let numsum: number[] = []
+        let numv = 0
+        let curv = 0
+        for (let _i = 0; _i < numlist.length; _i++) {
+            if (invert) {
+                numv -= 1
+                if (numv <= 0) {curv += 1;numv = curv}
+            } else {
+                if (curv <= 0) {curv = 1}
+                numv += 1
+                if (numv > curv) {curv += 1;numv = 1}
+            }
+            if (reverse) {numsum.unshift(numv)} else {numsum.push(numv)}
+        }
+        let numcheck: number[] = []
+        numv = 0
+        curv = 0
+        for (let _i = 0; _i < numlist.length; _i++) {
+            numv = numlist[_i] * numsum[_i]
+            numcheck.push(numv)
+            curv += numv
+        }
+        if (remnum > 0) { curv = curv % remnum}
+        return curv
+    }
 }
