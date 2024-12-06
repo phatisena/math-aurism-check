@@ -1,4 +1,4 @@
-namespace math {
+namespace Math {
 
     export function CheckNumStr(numstri:string="") {
         for (let _i = 0; _i < numstri.length; _i++) {
