@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.57/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.1.1","target":"arcade","targetVersion":"1.12.57","repo":"phatisena/math-aurism-check"}
-// total=1242472 new=5.85% cached=88.49% other=5.66%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.57/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"1.0.0","target":"arcade","targetVersion":"1.12.57","repo":"phatisena/math-aurism-check"}
+// total=1242478 new=5.85% cached=88.49% other=5.66%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -429,7 +429,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P54037(s) {
+function _main___P117667(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -831,13 +831,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P54037.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P54037.continuations = [  ]
+_main___P117667.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P117667.continuations = [  ]
 
-function _main___P54037_mk(s) {
+function _main___P117667_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P54037, depth: s.depth + 1,
+        parent: s, fn: _main___P117667, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -42328,5 +42328,5 @@ const sprites_BaseSpriteSayRenderer__C2260_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, [])
 
-return _main___P54037
+return _main___P117667
 })
