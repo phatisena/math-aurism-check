@@ -41,7 +41,17 @@ namespace math {
         return curv
     }
 
-    export function AurismCharCheck(storechar:string="",codestring:string="",remnum:number=0,invert:boolean=false,reverse:boolean=false) {
+    export function CheckCharStr(charstri:string="",stri:string="") {
+        for (let _i = 0; _i < stri.length; _i++) {
+            if (!(charstri.includes(stri.charAt(_i)))) {
+                return false
+            }
+        }
+        return true
+    }
+
+    export function AurismCheckChar(codestring:string="",storechar:string="",invert:boolean=false,reverse:boolean=false) {
+        if (!(CheckCharStr(storechar,codestring))) { return "" }
         let numlist: number[] = []
         for (let _i = 0; _i < codestring.length; _i++) {
             numlist.push(storechar.indexOf(codestring.charAt(_i)))
@@ -68,7 +78,7 @@ namespace math {
             numcheck.push(numv)
             curv += numv
         }
-        if (remnum > 0) { curv = curv % remnum}
-        return curv
+        curv = curv % storechar.length
+        return storechar.charAt(curv)
     }
 }
