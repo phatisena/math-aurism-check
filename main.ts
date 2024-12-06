@@ -1,4 +1,19 @@
 namespace Math {
+    
+    export function List2text(listval:number[]|string[],onechar:string=",") {
+        let curstr = ""
+        for (let _i = 0; _i < listval.length; _i++) {
+            if (typeof listval[_i] == "number" || typeof listval[_i] == "string") {
+                curstr = "" + curstr + listval[_i]
+            } else {
+                curstr = "" + curstr + "*any"
+            }
+            if (_i < listval.length - 1) {
+                curstr = "" + curstr + onechar
+            }
+        }
+        return curstr
+    }
 
     export function CheckNumStr(numstri:string="") {
         for (let _i = 0; _i < numstri.length; _i++) {
@@ -48,9 +63,9 @@ namespace Math {
         if (debug) {
             console.log("AurismDebugCheck")
             console.log("----------------")
-            console.log("numberlist: " + numlist)
-            console.log("generatesum: " + numsum)
-            console.log("numwithsum: " + numcheck)
+            console.log("numberlist: " + List2text(numlist,","))
+            console.log("generatesum: " + List2text(numsum,","))
+            console.log("numwithsum: " + List2text(numcheck,","))
             console.log("modulus: " + remnum)
             console.log("result: " + curv)
             console.log("----------------")
@@ -106,9 +121,9 @@ namespace Math {
         if (debug) {
             console.log("AurismDebugCheck")
             console.log("----------------")
-            console.log("numberlist: " + numlist)
-            console.log("generatesum: " + numsum)
-            console.log("numwithsum: " + numcheck)
+            console.log("numberlist: " + List2text(numlist,","))
+            console.log("generatesum: " + List2text(numsum,","))
+            console.log("numwithsum: " + List2text(numcheck,","))
             console.log("modulus: " + storechar.length)
             console.log("result: " + curv)
             console.log("----------------")
