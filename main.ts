@@ -71,6 +71,57 @@ namespace Math {
         return curv
     }
 
+    //%blockid=math_aurismbasecheck_checknum
+    //%block="Get aurism sum as number $numstring mod $remnum and base $basenum with invert $invert and reverse $reverse||and debug mode $debug"
+    //%basenum.defl=2
+    //%numstring.defl="12345678901357902468"
+    //%remnum.defl=10
+    //%group="aurism check"
+    //%weight=10
+    //%inlineInputMode=inline
+    export function AuriBaseCheck(numstring:string="",remnum:number=0,basenum:number=0,invert:boolean=false,reverse:boolean=false,debug:boolean=false) {
+        if (!(CheckNumStr(numstring))) { return -1 }
+        let numlist: number[] = []
+        for (let _i = 0; _i < numstring.length; _i++) {
+            numlist.push(parseInt(numstring.charAt(_i)))
+        }
+        let numsum: number[] = []
+        let numv = 0
+        let curv = 0
+        for (let _i = 0; _i < numlist.length; _i++) {
+            if (invert) {
+                numv -= 1
+                if (numv <= 0) {if (curv <= 0) {curv = basenum} else {curv = curv * basenum};numv = curv}
+            } else {
+                if (curv <= 0) {curv = basenum}
+                numv += 1
+                if (numv > curv) {curv = curv * basenum;numv = 1}
+            }
+            if (reverse) {numsum.unshift(numv)} else {numsum.push(numv)}
+        }
+        let numcheck: number[] = []
+        numv = 0
+        curv = 0
+        for (let _i = 0; _i < numlist.length; _i++) {
+            numv = numlist[_i] * numsum[_i]
+            numcheck.push(numv)
+            curv += numv
+        }
+        if (remnum > 0) { curv = curv % remnum}
+        if (debug) {
+            console.log("AuriBase-NumberCheck-Debug")
+            console.log("------------------------")
+            console.log("input: " + numstring)
+            console.log("numberlist: " + List2text(numlist,","))
+            console.log("generatesum: " + List2text(numsum,","))
+            console.log("numwithsum: " + List2text(numcheck,","))
+            console.log("modulus: " + remnum)
+            console.log("result: " + curv)
+            console.log("------------------------")
+        }
+        return curv
+             }
+    
     export function CheckCharStr(charstri:string="",stri:string="") {
         for (let _i = 0; _i < stri.length; _i++) {
             if (!(charstri.includes(stri.charAt(_i)))) {
@@ -118,6 +169,58 @@ namespace Math {
         curv = curv % storechar.length
         if (debug) {
             console.log("Aurism-StringCheck-Debug")
+            console.log("------------------------")
+            console.log("input: " + codestring)
+            console.log("numberlist: " + List2text(numlist,","))
+            console.log("generatesum: " + List2text(numsum,","))
+            console.log("numwithsum: " + List2text(numcheck,","))
+            console.log("modulus: " + storechar.length)
+            console.log("result: " + curv)
+            console.log("charresult: " + storechar.charAt(curv))
+            console.log("------------------------")
+        }
+        return storechar.charAt(curv)
+    }
+
+    //%blockid=math_aurismcheck_checkstring
+    //%block="Get aurism sum as string $codestring in store charcter $storechar and base $basenum with invert $invert and reverse $reverse||and debug mode $debug"
+    //%basenum.defl=2
+    //%codestring.defl="makecodearcade"
+    //%storechar.defl="0123456789abcdefghijklmnopqrstuvwxyz"
+    //%group="aurism check"
+    //%weight=5
+    //%inlineInputMode=inline
+    export function AuriBaseCheckChar(codestring:string="",storechar:string="",basenum:number=0,invert:boolean=false,reverse:boolean=false,debug:boolean=false) {
+        if (!(CheckCharStr(storechar,codestring))) { return "" }
+        let numlist: number[] = []
+        for (let _i = 0; _i < codestring.length; _i++) {
+            numlist.push(storechar.indexOf(codestring.charAt(_i)))
+        }
+        let numsum: number[] = []
+        let numv = 0
+        let curv = 0
+        for (let _i = 0; _i < numlist.length; _i++) {
+            if (invert) {
+                numv -= 1
+                if (numv <= 0) {if (curv <= 0) {curv = basenum} else                 if (numv <= 0) {if (curv <= 0) {curv = basenum} else {curv = curv * basenum};numv = curv}
+            } else {
+                if (curv <= 0) {curv = basenum}
+                numv += 1
+                if (numv > curv) {curv = curv * basenum;numv = 1}
+            }
+            if (reverse) {numsum.unshift(numv)} else {numsum.push(numv)}
+        }
+        let numcheck: number[] = []
+        numv = 0
+        curv = 0
+        for (let _i = 0; _i < numlist.length; _i++) {
+            numv = numlist[_i] * numsum[_i]
+            numcheck.push(numv)
+            curv += numv
+        }
+        curv = curv % storechar.length
+        if (debug) {
+            console.log("AuriBase-StringCheck-Debug")
             console.log("------------------------")
             console.log("input: " + codestring)
             console.log("numberlist: " + List2text(numlist,","))
