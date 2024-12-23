@@ -202,7 +202,7 @@ namespace Math {
         for (let _i = 0; _i < numlist.length; _i++) {
             if (invert) {
                 numv -= 1
-                if (numv <= 0) {if (curv <= 0) {curv = basenum} else                 if (numv <= 0) {if (curv <= 0) {curv = basenum} else {curv = curv * basenum};numv = curv}
+                if (numv <= 0) { if (curv <= 0) {curv = basenum} else {curv = curv * basenum};numv = curv}
             } else {
                 if (curv <= 0) {curv = basenum}
                 numv += 1
