@@ -182,7 +182,7 @@ namespace Math {
         return storechar.charAt(curv)
     }
 
-    //%blockid=math_aurismcheck_checkstring
+    //%blockid=math_aurismbasecheck_checkstring
     //%block="Get aurism sum as string $codestring in store charcter $storechar and base $basenum with invert $invert and reverse $reverse||and debug mode $debug"
     //%basenum.defl=2
     //%codestring.defl="makecodearcade"
